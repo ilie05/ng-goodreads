@@ -14,13 +14,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
+import { BooksComponent } from './books/books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBoxComponent,
     FilterSearchPipe,
-    BookTableComponent
+    BookTableComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,
