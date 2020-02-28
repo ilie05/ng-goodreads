@@ -332,10 +332,15 @@
 
   <app-search-box (searchFire)="doSearch($event)"></app-search-box>
 
-  <ul *ngFor="let book of books | filterSearch : searchTitle">
+  <!-- <ul *ngFor="let book of books | filterSearch : searchTitle">
     <li >{{book.originalTitle | uppercase}}</li>
     <img [src]="book.smallImageUrl" [alt]="book.originalTitle"/>
-  </ul>
+  </ul> -->
+
+  <app-book-table
+    [books]="(books | filterSearch: searchTitle)"
+  >
+  </app-book-table>
 
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
