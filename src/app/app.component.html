@@ -338,6 +338,7 @@
   </ul> -->
 
   <app-book-table
+  (deleteFire)="deleteBook($event)"
     [books]="(books | filterSearch: searchTitle)"
   >
   </app-book-table>

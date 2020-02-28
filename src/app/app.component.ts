@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from './shared/book-model';
 import { BookService } from './services/book.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -24,5 +25,18 @@ export class AppComponent {
 
   doSearch(event: {searchTerm: string}): void{
     this.searchTitle = event.searchTerm;
+  }
+
+  deleteBook(id: string){
+    this.bookService.deleteBookbyId(id)
+      .subscribe(() => {
+        this.bookService
+        .fetchBooks()
+        .subscribe((books: Book[]) => {
+          this.books = books;
+        });
+      })
+    ;
+
   }
 }

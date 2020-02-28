@@ -36,5 +36,11 @@ export class BookService {
       )
   }
 
+  deleteBookbyId(id: string){
+    return this.http.delete(`/books/${id}`, httpOptions)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
 
 }
